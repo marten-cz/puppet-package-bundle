@@ -1,7 +1,7 @@
 class package-bundle::tester-web (
   $ensure = installed
 ) {
-  package-bundle::developer { ensure => $ensure }
+  include package-bundle::developer
   package {
     [ 'iftop', 'jmeter', 'jmeter-junit', 'strace', 'stress', 'siege' ] :
       ensure => $ensure

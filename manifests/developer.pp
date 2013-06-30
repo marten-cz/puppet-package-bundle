@@ -1,7 +1,7 @@
 class package-bundle::developer (
   $ensure = installed
 ) {
-  package-bundle::basic { ensure => $ensure }
+  include package-bundle::basic
   package {
     [ 'git', 'gitg', 'gitk', 'tig', 'gettext', 'meld', 'sed', 'awk' ] :
       ensure => $ensure
